@@ -56,7 +56,7 @@ export default function Chat() {
 		}
 	}
 
-	const currentRoom = data.find(room => roomId === room.roomId);
+	const currentRoom = data.find(room => roomId === room.roomId) || { users: [userId] }
 
 	if (!messages) {
 		return <Navigate to='/' />
