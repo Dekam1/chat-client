@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { nanoid } from 'nanoid'
+import { Routes, Route } from 'react-router-dom';
+import Main from "./components/Main";
+import Chat from './components/Chat';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	React.useEffect(() => {
+		localStorage.getItem('userId') || localStorage.setItem('userId', nanoid())
+	}, [])
+
+	return (
+		<Routes>
+			<Route path='/' element={<Main />} />
+			<Route path='/chat/:roomId' element={<Chat />} />
+		</Routes>
+	);
 }
 
 export default App;
