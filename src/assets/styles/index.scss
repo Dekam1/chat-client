@@ -162,6 +162,11 @@ body,
 		left: 0;
 		right: 0;
 		width: 50%;
+
+		@media (max-width: 576px) {
+			padding: 20px 20px;
+			width: 100%;
+		}
 	}
 }
 
