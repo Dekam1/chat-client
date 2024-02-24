@@ -71,7 +71,7 @@ export default function Chat() {
 					</Spin>
 				</div>
 				: <div className="chat-page__wrapper">
-					<div className="chat">
+					<div style={{ height: window.innerHeight }} className="chat">
 						<div className="chat__body">
 							<ul className="messages">
 								{messages.map(message => (
